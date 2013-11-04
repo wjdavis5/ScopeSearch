@@ -1,0 +1,69 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master.master.cs" Inherits="ScopeSearch.Master" %>
+
+<!DOCTYPE html>
+<html>
+  <head id="Head1"><title>
+	Scope Search
+</title><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap -->
+    <link href="Content/bootstrap.min.css" rel="stylesheet" media="screen" />
+      <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
+      
+      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="//code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="Scripts/bootstrap.min.js"></script>
+      
+      
+      
+     <script src="Scripts/jquery-2.0.3.min.js"></script>
+	 <script>
+	      (function (i, s, o, g, r, a, m) {
+	          i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+	              (i[r].q = i[r].q || []).push(arguments)
+	          }, i[r].l = 1 * new Date(); a = s.createElement(o),
+              m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+	      })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+	      ga('create', 'UA-45229201-2', 'inin.com');
+	      ga('send', 'pageview');
+
+</script>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="Scripts/html5shiv.js"></script>
+      <script src="Scripts/respond.min.js"></script>
+    <![endif]-->
+      <asp:ContentPlaceHolder runat="server" ID="Head"></asp:ContentPlaceHolder>
+        
+        </head>
+  <body>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Gears Scope Search</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="Default.aspx">Home</a></li>
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <form id="form1" runat="server">
+        
+    <div>
+        <asp:ContentPlaceHolder id="Body" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+  
+  </body>
+</html>
