@@ -10,9 +10,25 @@ namespace ScopeSearch
 {
     public partial class Login : System.Web.UI.Page
     {
+        protected bool _loginFailed;
+
+        protected string failedMessage;
+           
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            try
+            {
+                _loginFailed = (bool) Session["LoginFailed"];
+                if (_loginFailed)
+                {
+                    failedMessage =
+                        "<div id=\"failedDiv\" class=\"alert alert-danger\"><h3>Login Failed!</h3></div>";
+                }
+                else
+                {
+                    failedMessage = "";
+                }
+            }catch(Exception){}
         }
 
         protected void SubmitButton_Click(object sender, EventArgs e)
@@ -25,6 +41,7 @@ namespace ScopeSearch
             else
             {
                 Session.Add("isAuth", false);
+                Session.Add("LoginFailed",true);
                 Response.Redirect("Default.aspx");
             }
 
@@ -42,10 +59,13 @@ namespace ScopeSearch
             if (username.Contains("\\"))
             {
                 if (username.Split('\\').Count() > 1)
+                {
                     username = username.Split('\\')[1]; //if the domain was included strip it out.
+                    domain = username.Split('\\')[0];
+                }
                 else return false;
             }
-            string domainAndUsername = @"i3domain\" + username;
+            string domainAndUsername = domain+ "\\" + username;
             DirectoryEntry entry = new DirectoryEntry("LDAP://i3domain.inin.com/DC=i3domain,DC=inin,DC=com", domainAndUsername, pwd);
 
             try

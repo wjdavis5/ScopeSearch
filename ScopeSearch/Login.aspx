@@ -5,14 +5,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
     <title>LogIn</title>
+    <script src="Scripts/jquery-2.0.3.min.js"></script>
+
     <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <script src="Scripts/bootstrap.min.js"></script>
-    <script src="Scripts/jquery-2.0.3.min.js"></script>
+    
 </head>
 <body style="padding-top: 20px">
     <div>
     <div class="container">
+        <%= failedMessage%>
+        
     <div class="row">
 		<div class="col-md-4 col-md-offset-4">
     		<div class="panel panel-default">
@@ -23,7 +27,7 @@
 			    	<form accept-charset="UTF-8" role="form" runat="server" ID="form1">
                     <fieldset><legend></legend>
 			    	  	<div class="form-group">
-                             <asp:TextBox ID="Username" class="form-control" placeholder="username" name="email" type="text" runat="server"/>
+                             <asp:TextBox ID="Username" class="form-control" placeholder="domain\username" name="email" type="text" runat="server"/>
                               </div>
 			    		<div class="form-group">
                             <asp:TextBox ID="Pwd" class="form-control" placeholder="Password" name="password" type="password" value="" runat="server"/>
